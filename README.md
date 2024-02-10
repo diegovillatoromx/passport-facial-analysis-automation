@@ -29,7 +29,7 @@ data-pipeline/
 │   ├── dynamodb_setup.py       <- Script to set up DynamoDB table
 │   └── s3_setup.py             <- Script to set up S3 bucket
 │   └── config/
-│       └── configurations.json  <- DynamoDB table configuration file
+│       └── configurations.json <- Configuration file for infrastructure
 │
 └── README.md                   <- File with information about the project
 ```
