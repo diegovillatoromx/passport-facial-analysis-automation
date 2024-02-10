@@ -28,6 +28,8 @@ data-pipeline/
 │   ├── api_gateway_setup.py    <- Script to set up Amazon API Gateway
 │   ├── dynamodb_setup.py       <- Script to set up DynamoDB table
 │   └── s3_setup.py             <- Script to set up S3 bucket
+│   └── config/
+│       └── configurations.json  <- DynamoDB table configuration file
 │
 └── README.md                   <- File with information about the project
 ```
