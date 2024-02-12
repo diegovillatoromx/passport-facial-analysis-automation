@@ -9,8 +9,8 @@
     "aws_lambda": {
         "FunctionName": "PhotoValidationProcessor",
         "Runtime": "python3.9",
-        "Timeout": 300,
         "MemorySize": 512,
+        "Timeout": 300,
         "Handler": "lambda_function.lambda_handler",
         "Description": "Lambda function for photo validation processing",
         "Architecture": "x86_64",
@@ -59,3 +59,4 @@
         ]
     }
 }
+
