@@ -8,7 +8,7 @@ def load_configurations():
     Load configurations from 'config/configurations.json'.
 
     Returns:
-    - A dictionary with the loaded configurations.
+    - A dictionary with the loaded configurations. 
     """
     with open(CONFIG_FILE_PATH, "r") as json_file:
         configurations = json.load(json_file)
