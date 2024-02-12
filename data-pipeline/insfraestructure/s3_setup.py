@@ -5,7 +5,7 @@ import os
 CONFIG_FILE_PATH = "config/configurations.json"
 
 def load_configurations():
-    """
+    """ 
     Load configurations from 'config/configurations.json'.
 
     Returns:
