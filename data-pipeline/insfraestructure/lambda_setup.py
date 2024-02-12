@@ -1,14 +1,16 @@
 import boto3
 import json
+import os
 
 CONFIG_FILE_PATH = "config/configurations.json"
- 
+LAMBDA_CODE_PATH = "image_processing/lambda_function.zip"
+
 def load_configurations():
     """
     Load configurations from 'config/configurations.json'.
 
     Returns:
-    - A dictionary with the loaded configurations. 
+    - A dictionary with the loaded configurations.
     """
     with open(CONFIG_FILE_PATH, "r") as json_file:
         configurations = json.load(json_file)
@@ -36,13 +38,16 @@ def create_lambda_function():
     iam_role_arn = configurations["iam_role_arn"]  # Extract IAM role ARN from configurations
     
     # Create the Lambda function
+    with open(LAMBDA_CODE_PATH, "rb") as file:
+        zip_file_content = file.read()
+
     response = lambda_client.create_function(
         FunctionName=lambda_function_name,
         Runtime=runtime,
         Role=iam_role_arn,  # Use IAM role ARN from configurations
         Handler="lambda_function.lambda_handler",
         Code={
-            "ZipFile": open("lambda_function.zip", "rb").read()  # Replace with your Lambda function code
+            "ZipFile": zip_file_content
         },
         Description="Lambda function for photo validation processing",
         Timeout=300,
@@ -58,4 +63,5 @@ def create_lambda_function():
 
 if __name__ == "__main__":
     create_lambda_function()
+
 
