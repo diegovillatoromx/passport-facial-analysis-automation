@@ -31,20 +31,19 @@ def create_lambda_function():
     
     # Define Lambda function parameters
     lambda_function_params = configurations["aws_lambda"]
-    iam_role_arn = configurations["iam_role_arn"]  # Extract IAM role ARN from configurations
+    
+    # Extract code and environment from configurations
+    code = configurations.get("code", {})
+    environment = configurations.get("environment", {})
+    
+    # Attach IAM role to Lambda function parameters
+    lambda_function_params["Role"] = configurations["iam_role_arn"]  # Use IAM role ARN from configurations
     
     # Create the Lambda function
     response = lambda_client.create_function(
         **lambda_function_params,
-        Role=iam_role_arn,  # Use IAM role ARN from configurations
-        Code={
-            "ZipFile": open("image_processing/lambda_function.zip", "rb").read()  # Replace with your Lambda function code
-        },
-        Environment={
-            'Variables': {
-                'S3_PUT_EVENT': json.dumps(configurations["s3_put_event"])
-            }
-        }
+        Code=code,
+        Environment=environment
     )
 
     # Extract and print the name of the created Lambda function
