@@ -57,7 +57,7 @@ def create_lambda_role():
         ]
     }
 
-    # Define policy documents for S3, CloudWatch, and Rekognition access
+    # Define policy documents for S3, CloudWatch, Rekognition, and DynamoDB access
     s3_policy_document = {
         "Version": "2012-10-17",
         "Statement": [{
@@ -85,6 +85,15 @@ def create_lambda_role():
         }]
     }
 
+    dynamodb_policy_document = {
+        "Version": "2012-10-17",
+        "Statement": [{
+            "Effect": "Allow",
+            "Action": "dynamodb:*",
+            "Resource": "*"
+        }]
+    }
+
     # Create the IAM role with the specified policies
     response = iam_client.create_role(
         RoleName=role_name,
@@ -96,6 +105,7 @@ def create_lambda_role():
     iam_client.put_role_policy(RoleName=role_name, PolicyName='S3_FullAccess', PolicyDocument=json.dumps(s3_policy_document))
     iam_client.put_role_policy(RoleName=role_name, PolicyName='CloudWatch_FullAccess', PolicyDocument=json.dumps(cloudwatch_policy_document))
     iam_client.put_role_policy(RoleName=role_name, PolicyName='Rekognition_FullAccess', PolicyDocument=json.dumps(rekognition_policy_document))
+    iam_client.put_role_policy(RoleName=role_name, PolicyName='DynamoDB_FullAccess', PolicyDocument=json.dumps(dynamodb_policy_document))
     
     # Extract and print the ARN of the created IAM role
     role_arn = response["Role"]["Arn"]
