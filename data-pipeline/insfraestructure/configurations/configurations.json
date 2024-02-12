@@ -1,0 +1,9 @@
+{
+    "aws_access_key_id": "YOUR_ACCESS_KEY_ID",
+    "aws_secret_access_key": "YOUR_SECRET_ACCESS_KEY",
+    "bucket_name": "cloudtopia-images",
+    "region": "us-east-1",
+    "bucket_arn": "",
+    "iam_role_name": "lambda_function_role",
+    "iam_role_arn": "arn:aws:iam::123456789012:role/lambda_function_role"
+}
