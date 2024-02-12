@@ -10,7 +10,7 @@ rekognition_client = boto3.client('rekognition')
 dynamodb_client = boto3.resource('dynamodb')
 
 validation_table = dynamodb_client.Table('ValidationRequests') 
-
+ 
 def lambda_handler(event, context):
     
     #Step 1 - Extract File Name from PUT Event
