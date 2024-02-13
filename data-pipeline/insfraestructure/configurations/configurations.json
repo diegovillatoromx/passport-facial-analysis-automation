@@ -57,6 +57,7 @@
                 }
             }
         ]
-    }
+    },
+    "arn_topic_sns": "arn:aws:sns:us-east-1:123456789012:ValidationResult"
 }
 
