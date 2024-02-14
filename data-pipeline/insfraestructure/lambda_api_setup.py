@@ -14,6 +14,30 @@ lambda_client = boto3.client('lambda',
                              aws_secret_access_key=aws_secret_access_key,
                              region_name=aws_region)
 
+# Define the policy document granting full access to DynamoDB
+dynamodb_policy_document = {
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "dynamodb:*",
+            "Resource": "*"
+        }
+    ]
+}
+
+# Create an IAM client
+iam_client = boto3.client('iam')
+
+# Attach the policy to the role
+iam_client.put_role_policy(
+    RoleName=config_data['iam_role_name'],  # Replace with the actual role name
+    PolicyName='DynamoDBFullAccessPolicy',
+    PolicyDocument=json.dumps(dynamodb_policy_document)
+)
+
+print("DynamoDB full access policy attached to lambda function role.")
+
 # Create Lambda function
 lambda_response = lambda_client.create_function(
     FunctionName='ImageRequestHandler',
@@ -34,4 +58,5 @@ config_data['lambda_arn'] = lambda_response['FunctionArn']
 with open('configurations/configurations.json', 'w') as config_file:
     json.dump(config_data, config_file)
 
-print("Lambda ARN:", lambda_response['FunctionArn'])
+print("Lambda function created successfully.")
+
