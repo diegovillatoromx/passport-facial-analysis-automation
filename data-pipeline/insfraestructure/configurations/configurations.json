@@ -59,5 +59,6 @@
         ]
     },
     "arn_topic_sns": "arn:aws:sns:us-east-1:123456789012:ValidationResult"
+    "invoke_URL": "https://your-api-id.execute-api.us-east-1.amazonaws.com/test"
 }
 
