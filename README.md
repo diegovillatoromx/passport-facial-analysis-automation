@@ -2,7 +2,7 @@
  
 ```r  
 data-pipeline/ 
-│ 
+│  
 ├── image_processing/
 │   ├── lambda_function.py      <- Lambda function code for image processing
 │
