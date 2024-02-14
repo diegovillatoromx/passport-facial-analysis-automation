@@ -38,6 +38,10 @@ iam_client.put_role_policy(
 
 print("DynamoDB full access policy attached to lambda function role.")
 
+# Read the Lambda function code from the zip file
+with open('data_retrieval/lambda_api.zip', 'rb') as zip_file:
+    lambda_code = zip_file.read()
+
 # Create Lambda function
 lambda_response = lambda_client.create_function(
     FunctionName='ImageRequestHandler',
@@ -45,7 +49,7 @@ lambda_response = lambda_client.create_function(
     Role=config_data['iam_role_arn'],  # Assuming the IAM role is already created
     Handler='lambda_function.lambda_handler',
     Code={
-        'ZipFile': open('lambda_function.zip', 'rb').read()  # Assuming you have a ZIP file with your Lambda code
+        'ZipFile': lambda_code
     },
     Description='Lambda function for handling image requests',
     Architecture='x86_64'
