@@ -1,7 +1,7 @@
 # passport-facial-analysis-automation 
   
 ```r  
-data-pipeline/    
+data-pipeline/     
 │    
 ├── image_processing/
 │   ├── lambda_function.py      <- Lambda function code for image processing
