@@ -29,7 +29,6 @@ data-pipeline/
 </p>
 
 
-![image](https://github.com/diegovillatoromx/passport-facial-analysis-automation/blob/main/architecture.png)
 ```plaintext
 ValidationRequests
 -------------------
