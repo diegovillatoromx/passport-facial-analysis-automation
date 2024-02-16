@@ -24,3 +24,18 @@ data-pipeline/
 │
 └── README.md                   <- File with information about the project
 ```
+
+
+
+
+```plaintext
+ValidationRequests
+-------------------
+
+- FileName: String
+- ValidationResult: String
+- FailureReasons: List<String> (Optional)
+- Timestamp: String (ISO8601 Format)
+- FileLocation: String
+- FaceDetails: JSON Object
+```
