@@ -24,7 +24,9 @@ data-pipeline/
 │
 └── README.md                   <- File with information about the project
 ```
-
+<p align="center">
+  <img src="https://github.com/diegovillatoromx/airflow-snowflake-pipeline/blob/main/architecture.gif" alt="architecture-airflow" width="800">
+</p>
 
 
 ![image](https://github.com/diegovillatoromx/passport-facial-analysis-automation/blob/main/architecture.png)
