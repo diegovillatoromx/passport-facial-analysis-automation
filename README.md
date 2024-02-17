@@ -217,14 +217,3 @@ We model our data in DynamoDB using the following attributes:
 }
 ```
 
-```plaintext
-ValidationRequests
--------------------
-
-- FileName: String
-- ValidationResult: String
-- FailureReasons: List<String> (Optional)
-- Timestamp: String (ISO8601 Format)
-- FileLocation: String
-- FaceDetails: JSON Object
-```
