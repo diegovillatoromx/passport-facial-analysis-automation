@@ -1,5 +1,16 @@
 # Automated Passport Photo Validation: Streamline Processes with Cloudtopia Passport Office
 
+## Table of Contents
+
+1. [Description: Introduction](#description-introduction)
+   - [Key Points](#key-points)
+2. [Architecture](#architecture)
+3. [Dataset](#dataset)
+4. [Methodology](#methodology)
+5. [Modular Code Overview](#modular-code-overview)
+6. [Contribution](#contribution)
+7. [Contact](#contact)
+
 ## Description: Introduction
 
 As an employee of the Cloudtopia Passport Office, a pivotal Federal agency entrusted with issuing passports to our esteemed citizens, you are at the forefront of revolutionizing the Passport Photo Validation process. Our agency is committed to simplifying and streamlining operations through automation, ensuring a seamless experience for both applicants and staff members.
