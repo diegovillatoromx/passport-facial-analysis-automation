@@ -27,6 +27,30 @@ As an employee of the Cloudtopia Passport Office, a pivotal Federal agency entru
 By embarking on this journey of automation, we strive to enhance the efficiency, accuracy, and security of the Passport Photo Validation process, ultimately serving the needs of our citizens and reinforcing the reputation of the Cloudtopia Passport Office as a beacon of reliability and innovation.
 
 
+## Design Components
+
+The high-level design components of our system are as follows:
+
+### Image Storage
+We require a robust image storage solution to retain user-submitted photos. Our storage component must be capable of handling images of varying sizes efficiently, ensuring fast uploads with minimal latency and high throughput. Additionally, durability of stored images is paramount to ensure data integrity.
+
+### Compute
+Our system needs compute capabilities to respond to file uploads effectively. We have two options: polling to detect new images or utilizing an event-driven architecture for automatic invocation of the compute layer upon image upload. Regardless of the approach, reliability and fast performance are critical for this component to ensure timely processing of uploaded images.
+
+### Facial Recognition
+At the heart of our application lies facial recognition, responsible for detecting facial features in submitted photos. This component must be scalable to accommodate varying workloads and exhibit low latency to provide near-real-time analysis. Integration with facial recognition libraries that utilize confidence bands is essential for accurate image analysis.
+
+### Database
+A performant and scalable database is essential for storing approval/rejection details and references to submitted images. We require a key-value lookup store capable of handling high volumes of data efficiently, ensuring quick access to stored information for evaluation purposes.
+
+### Notifications
+Notifications play a crucial role in our architecture, facilitating the dissemination of messages to client services upon image evaluation. Utilizing a notification system enables decoupling of microservices and mitigates reliance on a monolithic database, promoting scalability and fault tolerance in our system.
+
+### API
+To provide additional information about evaluation results, we need an API to expose relevant data to client teams. The API serves as a gateway for accessing evaluation outcomes, enabling seamless integration with client applications and enhancing user experience.
+
+These six themes form the foundation of our architecture, guiding the development of our system to meet the requirements of the Passport Photo Validation process effectively.
+
   
 ```r  
 data-pipeline/     
