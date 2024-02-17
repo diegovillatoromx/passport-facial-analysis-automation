@@ -217,3 +217,25 @@ We model our data in DynamoDB using the following attributes:
 }
 ```
 
+## Contribution
+
+We would love to receive contributions from the community to improve and expand our Passport Photo Validation project! If you have ideas, suggestions for improvements, or would like to collaborate on development, please let us know! You can contribute in various ways, including:
+
+- Reporting issues or bugs you encounter.
+- Proposing new features or enhancements.
+- Submitting pull requests with code to address issues or implement new features.
+
+We look forward to working with you to grow this project and make it even better!
+
+## Contact
+
+If you have any questions, comments, or simply want to get in touch with us, please feel free to do so. You can find us on the following platforms:
+
+- **GitHub:** [Link to Repository]([https://github.com/diegovillatoromx/passport-facial-analysis-automation/edit/main/README.md])
+- **Email:** diegovillatoromx@gmail.com
+- **Twitter:** [@diegovillatomx](https://twitter.com/diegovillatomx)
+- **LinkedIn:** [DiegoVillatoromx](https://www.linkedin.com/in/diegovillatoromx)
+
+We look forward to hearing from you soon!
+
+
