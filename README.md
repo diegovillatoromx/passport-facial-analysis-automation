@@ -77,7 +77,50 @@ To provide additional information about evaluation results, we need an API to ex
 
 These design choices were made based on their suitability and alignment with the requirements of our Passport Photo Validation system. Services marked with an asterisk (*) were utilized in the creation of the project.
 
-  
+## Architecture
+
+The architecture of our Passport Photo Validation system is designed to leverage cloud-native services provided by AWS, ensuring scalability, reliability, and cost-effectiveness. The system follows a microservices architecture, comprising loosely coupled components that communicate via APIs and event-driven mechanisms.
+
+<p align="center">
+  <img src="https://github.com/diegovillatoromx/passport-facial-analysis-automation/blob/main/architecture.gif" alt="architecture-aws" width="800">
+</p>
+
+
+### High-Level Overview
+
+1. **Image Submission:** Users submit passport photos through a web interface or mobile application. The images are uploaded to Amazon S3, where they are securely stored and made available for processing.
+
+2. **Image Processing:** Upon upload, images trigger an event that invokes AWS Lambda functions responsible for image processing tasks. These functions perform facial recognition using Amazon Rekognition, ensuring compliance with passport photo guidelines.
+
+3. **Data Storage:** Approved/rejected photos and associated metadata are stored in Amazon DynamoDB, providing a highly scalable and performant storage solution for our application's requirements.
+
+4. **Notifications:** Evaluation results are published to Amazon SNS topics, allowing client services to subscribe and receive updates in real-time. This decoupled architecture enables seamless integration with downstream systems.
+
+5. **API Gateway:** An API Gateway serves as the entry point for client applications to access evaluation results and additional information. It provides a secure, managed interface for communication with our system.
+
+### Benefits of Architecture
+
+- **Scalability:** Cloud-native services enable automatic scaling to accommodate fluctuating workloads, ensuring consistent performance under varying demand.
+- **Reliability:** Built-in redundancy and fault tolerance mechanisms of AWS services enhance the reliability of our system, minimizing downtime and ensuring data integrity.
+- **Cost-Effectiveness:** Pay-as-you-go pricing model of AWS allows us to optimize costs by only paying for the resources consumed, without upfront investment in infrastructure.
+
+## Dataset
+
+The dataset used in our Passport Photo Validation system comprises a diverse collection of passport photos submitted by users. Each photo is associated with metadata including the applicant's name, date of submission, and evaluation status (approved/rejected).
+
+### Data Collection
+
+Passport photos are collected from users during the passport application process via the Cloudtopia Passport Office's web portal or mobile application. The submission process ensures adherence to guidelines for passport photo specifications, including clarity, facial visibility, and absence of accessories.
+
+### Data Storage
+
+Submitted photos are securely stored in Amazon S3 buckets, ensuring durability and accessibility. Metadata associated with each photo, such as applicant details and evaluation results, are stored in Amazon DynamoDB tables, providing fast and scalable data storage for efficient retrieval and processing.
+
+### Data Security
+
+Data security is paramount in our system. AWS Identity and Access Management (IAM) roles and policies are employed to enforce least privilege access controls, ensuring that only authorized entities can access and modify data. Additionally, encryption at rest and in transit mechanisms provided by AWS services protect data integrity and confidentiality.
+
+
 ```r  
 data-pipeline/     
 │     
@@ -102,9 +145,6 @@ data-pipeline/
 │
 └── README.md                   <- File with information about the project
 ```
-<p align="center">
-  <img src="https://github.com/diegovillatoromx/passport-facial-analysis-automation/blob/main/architecture.gif" alt="architecture-aws" width="800">
-</p>
 
 
 ```plaintext
