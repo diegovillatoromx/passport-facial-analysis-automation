@@ -121,6 +121,11 @@ Submitted photos are securely stored in Amazon S3 buckets, ensuring durability a
 Data security is paramount in our system. AWS Identity and Access Management (IAM) roles and policies are employed to enforce least privilege access controls, ensuring that only authorized entities can access and modify data. Additionally, encryption at rest and in transit mechanisms provided by AWS services protect data integrity and confidentiality.
 
 
+## Methodology and Modular Code Overview
+
+Our methodology for developing the Passport Photo Validation system emphasizes modularity, scalability, and maintainability. We follow industry best practices and utilize modern software engineering principles to ensure the robustness and flexibility of our codebase.
+
+
 ```r  
 data-pipeline/     
 │     
@@ -145,6 +150,45 @@ data-pipeline/
 │
 └── README.md                   <- File with information about the project
 ```
+
+### Agile Development Approach
+
+We adopt an agile development approach, breaking down the development process into iterative sprints, each focused on delivering specific functionalities or components of the system. This iterative approach allows us to adapt to changing requirements, incorporate feedback, and deliver incremental value to stakeholders.
+
+### Continuous Integration and Deployment (CI/CD)
+
+We implement a CI/CD pipeline to automate the build, test, and deployment processes, ensuring the reliability and consistency of our codebase. With automated testing and deployment, we can rapidly iterate on new features and enhancements while maintaining code quality and stability.
+
+### Modular Code Design
+
+Our codebase is structured into modular components, each responsible for specific functionalities or tasks within the system. By adhering to the principles of modularity, we promote code reuse, facilitate maintainability, and enable scalability as our system evolves.
+
+#### Component Breakdown:
+
+1. **Image Processing Module:** Located in the `image_processing/` directory, this module encapsulates the logic for processing uploaded images. The `lambda_function.py` file contains the code for the Lambda function responsible for image processing tasks.
+
+2. **Notifications Service:** The notifications service, found in the `notifications/` directory, handles the publishing of evaluation results. The `lambda_destination.py` file configures Lambda Destinations for message delivery.
+
+3. **Data Retrieval Module:** Within the `data_retrieval/` directory, the `api_gateway/` subdirectory contains the code for the Lambda function responsible for data retrieval tasks via API Gateway.
+
+### Infrastructure as Code
+
+Our infrastructure is defined and managed using Infrastructure as Code (IaC) principles. The `infrastructure/` directory contains scripts for setting up various AWS resources required by our system.
+
+- **Lambda Setup:** The `lambda_setup.py` script sets up Lambda functions.
+- **SNS Setup:** The `sns_setup.py` script configures Amazon SNS topics.
+- **API Gateway Setup:** The `api_gateway_setup.py` script provisions Amazon API Gateway.
+- **DynamoDB Setup:** The `dynamodb_setup.py` script creates DynamoDB tables.
+- **S3 Setup:** The `s3_setup.py` script initializes S3 buckets.
+
+Additionally, the `config/` directory contains a `configurations.json` file, serving as a configuration file for infrastructure setup.
+
+### Version Control and Collaboration
+
+We utilize version control systems such as Git and collaborative development platforms like GitHub to manage code changes, track issues, and facilitate collaboration among team members. Version control ensures code consistency, enables code review processes, and provides a centralized repository for project assets.
+
+By adhering to these methodologies and adopting a modular code design approach, we aim to build a robust, scalable, and maintainable Passport Photo Validation system that meets the evolving needs of our users and stakeholders.
+
 
 
 ```plaintext
