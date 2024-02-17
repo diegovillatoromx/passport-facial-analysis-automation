@@ -187,7 +187,35 @@ We utilize version control systems such as Git and collaborative development pla
 
 By adhering to these methodologies and adopting a modular code design approach, we aim to build a robust, scalable, and maintainable Passport Photo Validation system that meets the evolving needs of our users and stakeholders.
 
+## Data Modeling
 
+Data modeling plays a crucial role in designing the schema for storing and accessing data efficiently in DynamoDB. We utilize a NoSQL approach to model our data, leveraging the flexibility and scalability offered by DynamoDB.
+
+### Table Structure
+
+We model our data in DynamoDB using the following attributes:
+
+| Attribute        | Description                                              |
+|------------------|----------------------------------------------------------|
+| FileName         | Name of the uploaded file                                |
+| ValidationResult| Result of the photo validation process (e.g., approved/rejected)|
+| FailureReasons   | Reasons for rejection, if any (stored as JSON)          |
+| Timestamp        | Timestamp indicating when the validation occurred        |
+| FileLocation     | Location of the file in the S3 bucket                   |
+| FaceDetails      | Facial details extracted during image processing (stored as JSON)|
+
+### Sample Item Attributes
+
+```json
+{
+    "FileName": "example.jpg",
+    "ValidationResult": "approved",
+    "FailureReasons": "{\"reason\": \"None\"}",
+    "Timestamp": "2022-02-20T12:00:00",
+    "FileLocation": "s3://bucket-name/example.jpg",
+    "FaceDetails": "{\"eyes\": \"open\", \"smile\": \"none\"}"
+}
+```
 
 ```plaintext
 ValidationRequests
