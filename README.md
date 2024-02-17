@@ -4,12 +4,13 @@
 
 1. [Description: Introduction](#description-introduction)
    - [Key Points](#key-points)
-2. [Architecture](#architecture)
-3. [Dataset](#dataset)
-4. [Methodology](#methodology)
-5. [Modular Code Overview](#modular-code-overview)
-6. [Contribution](#contribution)
-7. [Contact](#contact)
+2. [Design Components](#design-components)
+3. [Architecture](#architecture)
+4. [Dataset](#dataset)
+5. [Methodology](#methodology)
+6. [Modular Code Overview](#modular-code-overview)
+7. [Contribution](#contribution)
+8. [Contact](#contact)
 
 ## Description: Introduction
 
