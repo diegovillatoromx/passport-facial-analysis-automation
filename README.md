@@ -3,7 +3,7 @@
 ## Table of Contents
 
 1. [Description](#description)
-2. [Architecture](#architecture)
+2. [Architecture](#architecture) 
 3. [Dataset](#dataset)
 4. [Methodology and Modular Code Overview](#methodology-and-modular-code-overview)
 5. [Data Modeling](#data-modeling)
