@@ -1,7 +1,7 @@
 # Automated Passport Photo Validation: Streamline Processes with Cloudtopia Passport Office
 
 ## Table of Contents
-
+ 
 1. [Description](#description)
 2. [Architecture](#architecture) 
 3. [Dataset](#dataset)
