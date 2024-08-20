@@ -1,4 +1,4 @@
-import boto3
+import boto3 
 import json
 
 # Load AWS credentials and other configurations from configurations/configurations.json
