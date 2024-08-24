@@ -1,5 +1,5 @@
 import boto3 
-import json
+import json 
  
 CONFIG_FILE_PATH = "config/configurations.json"
 
