@@ -1,6 +1,6 @@
 import boto3 
 import json
-import os
+import os 
  
 CONFIG_FILE_PATH = "config/configurations.json"
 
