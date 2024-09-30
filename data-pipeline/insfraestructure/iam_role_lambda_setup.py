@@ -1,6 +1,6 @@
 import boto3 
 import json 
- 
+  
 CONFIG_FILE_PATH = "config/configurations.json"
 
 def load_configurations():
