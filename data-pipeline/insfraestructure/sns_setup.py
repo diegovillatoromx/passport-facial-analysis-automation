@@ -1,5 +1,5 @@
 import boto3
-import json 
+import json  
 
 # Load AWS credentials and other configurations from configurations/configurations.json
 with open('configurations/configurations.json', 'r') as config_file:
