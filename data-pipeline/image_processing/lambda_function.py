@@ -1,7 +1,7 @@
 import json
 import boto3 
 import uuid   
-import datetime  
+import datetime   
   
 BUCKET_NAME = "cloudtopia-images" 
 FACE_DETAILS_THRESHOLDS = {"Smile": {"desiredValue": False, "minConfidence": 90}, "Sunglasses": {"desiredValue": False, "minConfidence": 90}, "EyesOpen": {"desiredValue": True, "minConfidence": 90}, "MouthOpen": {"desiredValue": False, "minConfidence": 90}}
