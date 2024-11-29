@@ -1,6 +1,6 @@
 import json
 import boto3  
-import uuid    
+import uuid  
 import datetime  
   
 BUCKET_NAME = "cloudtopia-images" 
