@@ -1,6 +1,6 @@
 import boto3 
 import datetime
-import json 
+import json
 
 def write_result_to_dynamodb(evaluation_result, file_name, face_details):
     # Initialize DynamoDB client
